@@ -7,6 +7,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import SectionB from './SectionB';
 import LoginForm from '../Login/LoginForm';
 import FadeIn from './FadeIn';
+import ImageGallary from './ImageGallary';
 
 
 function Home() {
@@ -115,6 +116,11 @@ const handleCloseLoginForm = () => {
                         <SectionB/>
                 </div>
                 </FadeIn>
+                <FadeIn>
+        <div className='image-gallery-section'>
+          <ImageGallary /> {/* Add the ImageGallery component here */}
+        </div>
+      </FadeIn>
                 {showLoginForm && <LoginForm onClose={handleCloseLoginForm} />} {/* Render the login form */}  
     </div>
   )

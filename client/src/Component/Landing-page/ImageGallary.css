@@ -1,0 +1,27 @@
+/* src/ImageGallery.css */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center the gallery */
+  }
+  
+  .gallery-item {
+    flex: 1 1 calc(33.333% - 10px); /* 3 images per row */
+    box-sizing: border-box;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounded corners */
+  }
+  .gallary-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .gallary-content h3{
+    font-size: 2rem;
+  }
