@@ -1,0 +1,93 @@
+/* src/components/AddAttendanceForm.css */
+
+.attendance-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.attendance-container .attendance h1{
+  text-align: center;
+}
+.attendance-container .attendance form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .attendance-container .attendance  form .attendance-form-content input[type="text"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .attendance-container .attendance  form .attendance-select select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  
+  .attendance-container .attendance  form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .attendance-container .attendance  form button:hover {
+    background-color: #138496;
+  }
+  .student-dropdown li{
+    background-color: #138496;
+  }
+
+  .attendance-list .attendance-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .attendance-list .attendance-list-table thead {
+    background-color: #009879;;
+  }
+  
+  .attendance-list .attendance-list-table th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .attendance-list .attendance-list-table th, td:hover{
+    background-color:#009879
+  }
+  
+  .attendance-list .attendance-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .attendance-list .attendance-list-table tbody tr .red{
+        background-color: rgb(228, 27, 27);
+  }
+  .attendance-list .attendance-list-table tbody tr .green{
+    background-color: #009879;
+  }

@@ -1,0 +1,149 @@
+/* src/components/CreateEventForm.css */
+.create-event-form {
+  width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-event-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-event-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-event-form .form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.create-event-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.create-event-form input, .create-event-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-event-form button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-event-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* src/components/Events.css */
+.events-table {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-table h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.events-table th, .events-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.events-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.events-table td {
+  background-color: #fff;
+}
+
+.events-table td button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.events-table td button:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+.events-table form {
+  margin-top: 20px;
+}
+
+.events-table form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.events-table .form-group {
+  margin-bottom: 20px;
+}
+
+.events-table .form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.events-table .form-group input, .events-table .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.events-table .form-group input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.events-table .form-group button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.events-table .form-group button[type="submit"]:hover {
+  background-color: #3e8e41;
+}

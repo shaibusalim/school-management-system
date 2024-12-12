@@ -1,0 +1,81 @@
+.register{
+  width: 70%;
+}
+.container {
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+ 
+}
+.sidebar1 {
+  width: 30%;
+  border-right: 1px solid #ddd;
+}
+.sidebar1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar1 ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  color: #999;
+  cursor: pointer;
+}
+.sidebar1 ul li.active {
+  background-color: #17a2b8;
+  color: #fff;
+}
+.content {
+  width: 70%;
+  padding: 20px;
+}
+.content h2 {
+  margin-top: 0;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.2s ease;
+}
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #17a2b8;
+  outline: none;
+  background-color: #fff;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons .button1, .button2 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+.buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

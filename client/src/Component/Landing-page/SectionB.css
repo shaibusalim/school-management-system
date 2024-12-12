@@ -1,0 +1,104 @@
+.section-b-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  
+}
+.section-b-container .section-b-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  
+}
+
+.section-b-container .section-b-content .about-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    height: 900px;
+    gap: 20px;
+
+
+}
+.section-b-container .section-b-content .about-section .about-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 500px;
+    min-height: 470px;
+    padding: 10px;
+  
+}
+.section-b-container .section-b-content .about-section .about-1 h4{
+    font-size: 1.6rem;
+}
+.section-b-container .section-b-content .about-section .about-1 p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,0.5);
+    font-size: 17px;
+}
+.section-b-container .section-b-content .about-section .about-img{
+    width: 430px;
+    height: 460px;
+   
+}
+.section-b-container .section-b-content .about-section .about-img img{
+    width: 450px;
+    height: 460px;
+}
+.section-b-container .section-b-content .about-section .about-1 button{
+    width: 150px;
+    height: 45px;
+    margin-top: 10px;
+    background: linear-gradient(to right,#3a92ff,#88e2fb);
+    border-style: hidden;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+.section-b-container .section-b-content .about-section .about-1 button:hover{
+    background: linear-gradient(to right, #2575fc,  #9e4ff2);;
+}
+.section-b-container .section-b-content .section-b-form{
+    border: 2px solid black;
+    height:140px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    max-width: 1200px;
+    position: relative;
+    bottom: 20px;
+    background-color: rgba(0,0,0,0.85);
+    color: white;
+    border-style: hidden;
+    box-shadow: 7px 2px 20px 5px rgba(0,0,0,0.07);
+}
+.section-b-container .section-b-content .section-b-form form{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.section-b-container .section-b-content .section-b-form form input{
+    height: 45px;
+    padding-left: 20px;
+    color: rgba(0,0,0,0.4);
+}
+.section-b-container .section-b-content .section-b-form form input:first-of-type{
+    flex-grow: 0.5;
+}
+.section-b-container .section-b-content .section-b-form form button{
+    width: 120px;
+    color: white;
+    font-size: 16px;
+    border-style: hidden;
+    background: linear-gradient(to right,#3a92ff,#88e2fb);
+}
+.section-b-container .section-b-content .section-b-form form input::placeholder{
+    margin-left: 100px;
+}

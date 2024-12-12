@@ -1,0 +1,84 @@
+/* LoginForm.css */
+.login-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; 
+    animation: fadeIn 0.5s;
+  }
+  
+  .login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 700px;
+    height: 500px;
+  }
+  
+  .login-form-image {
+    flex: 1;
+    background-size: cover;
+  }
+  
+  .login-form-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .login-form-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-form-container   .login-form-content form button:first-of-type {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #77a3ef;
+    color: white;
+    cursor: pointer;
+  }
+  .login-form-container .login-form-content form .close-icon{
+    position: absolute;
+    top: 80px;
+    right: 320px;  
+  }
+  
+  .login-form-container   .login-form-content form button:hover {
+    background-color: #be82ff;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

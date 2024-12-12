@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; 
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000; 
+  }
+  
+  .navbar-container.hidden {
+    transform: translateY(-100%); 
+  }
+  
+  .navbar-container.visible {
+    transform: translateY(0); 
+  }
+
+.navbar-container .navbar-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+  
+    
+}
+.navbar-container .navbar-content h1{
+   font-size: 1.6rem;
+   margin-left: 50px;
+}
+.navbar-container .navbar-content .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+.navbar-container .navbar-content .navbar .hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    cursor: pointer;
+  }
+.navbar-container .navbar-content .navbar ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-right: 10px;
+}
+.navbar-container .navbar-content .navbar ul li{
+    list-style-type: none;
+}
+.navbar-container .navbar-content .navbar ul li a{
+    text-decoration: none;
+    font-size: 0.87rem;
+}
+
+.navbar-container .navbar-content .navbar .search-bar input{
+    width: 200px;
+    height: 30px;
+    border-radius: 8px;
+    border-style: hidden;
+}
+.navbar-container .navbar-content .navbar .search-bar input:focus{
+    border: none; 
+  box-shadow: none; 
+}
+.navbar-container .navbar-content .navbar .search-bar button{
+    width: 70px;
+    height: 30px;
+    background: linear-gradient(to right, #77a3ef,  #be82ff);
+    color: white;
+    border-style: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-container .navbar-content .navbar ul {
+      display: none; 
+      flex-direction: column; 
+      position: absolute; 
+      top: 70px; 
+      left: 0;
+      right: 0;
+      background-color: white; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .navbar-container .navbar-content .navbar ul.open {
+      display: flex; 
+    }
+  
+    .navbar-container .navbar-content .navbar .hamburger {
+      display: block; 
+      margin-right: 20px; 
+    }
+  
+    .navbar-container .navbar-content .navbar .search-bar {
+      display: none; 
+    }
+  }

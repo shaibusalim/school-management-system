@@ -1,0 +1,123 @@
+.landingpage-container  .first-section{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.landingpage-container  .first-section .first-section-content{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    min-height: 70vh;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+.landingpage-container .first-section .first-section-content .content-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+    padding: 40px;
+}
+.landingpage-container .first-section .first-section-content .content-1 h2{
+    font-size: 3rem;
+    color: white;
+    
+}
+.landingpage-container .first-section .first-section-content .content-1 p{
+    font-size: 24px;
+    color: white;
+}
+.landingpage-container .first-section .first-section-content .content-1 .ladingpage-search {
+    display: flex;
+    align-items: center;
+}
+.landingpage-container .first-section .first-section-content .content-1 .ladingpage-search input{
+    width: 390px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.19); /* Translucent white background */
+    backdrop-filter: blur(2px);
+    border-style: hidden;
+    padding: 20px;
+}
+.landingpage-container .first-section .first-section-content .content-1 .ladingpage-search input::placeholder{
+    color: white;
+}
+.landingpage-container .first-section .first-section-content .content-1 .ladingpage-search button{
+    width: 120px;
+    height: 45px;
+    position: relative;
+    right: 60px;
+    border-style: hidden;
+    background: linear-gradient(to right,#3a92ff,#88e2fb);
+    color: white;
+    cursor: pointer;
+}
+.landingpage-container .first-section .first-section-content .content-1 .ladingpage-search button:hover{
+    background: linear-gradient(to right, #2575fc,  #9e4ff2);
+  }
+.landingpage-container .first-section .first-section-content .content-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    width: 400px;
+    max-height: 100vh;
+}
+
+.landingpage-container .first-section .first-section-content .content-1 .landingpage-button button{
+    width:150px;
+    margin-top: 50px;
+    height: 50px;
+    font-size: 15px;
+    border-style: hidden;
+    background: linear-gradient(to right, #4f90ff,  #994dea);
+    color: white;
+    cursor: pointer;
+}
+.landingpage-container .first-section .first-section-content .content-1 .landingpage-button button:hover{
+    background: linear-gradient(to right,#5ea0f1,#5ac6e4);
+}
+
+.landingpage-container .first-section .first-section-content .content-2 .cd{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 300px;
+    height: 250px;
+    min-height: 200px;
+    position: relative;
+    top: 100px;
+    background-color: white;
+ 
+}
+
+.card-1 {
+    background: linear-gradient(to right, #f6a37a, #f06264); /* Orange to reddish gradient */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-2 {
+    background: linear-gradient(to right, #2575fc,  #9e4ff2); /* Purple to blue gradient */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-3 {
+    background: linear-gradient(to right,#3a92ff,#35cbf5); /* Teal to blue gradient */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .landingpage-container .content-3{
+    margin-top: 200px;
+    width: 100%;
+    height: 100vh;
+  }
+ 
+  

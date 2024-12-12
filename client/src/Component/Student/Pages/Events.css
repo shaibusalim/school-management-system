@@ -1,0 +1,63 @@
+.student-events {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    width: 100%;
+  }
+ 
+  
+  .student-events h2 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .student-events ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .student-events li {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .student-events li:last-child {
+    border-bottom: none;
+  }
+  
+  .student-events h3 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .student-events p {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .student-events p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .student-events .event-info {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .student-events .event-info span {
+    font-weight: bold;
+  }

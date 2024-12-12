@@ -1,0 +1,45 @@
+.stdnt-teach-list .stdnt-teach-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .stdnt-teach-list .stdnt-teach-list-table thead {
+    background-color: #009879;;
+  }
+  
+  .stdnt-teach-list .stdnt-teach-list-table th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .stdnt-teach-list .stdnt-teach-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .stdnt-teach-buttons{
+    display: flex;
+    gap: 2px;
+  }
+
+  .edit-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    opacity: 0.8;
+  }
+  
+  

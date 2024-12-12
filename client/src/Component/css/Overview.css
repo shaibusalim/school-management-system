@@ -1,0 +1,149 @@
+.overview-container{
+  width: 100%;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card.orange {
+    background: linear-gradient(45deg, #ff9a9e, #f592d5);
+    display: flex;
+  }
+  
+  .card.green {
+    background: linear-gradient(45deg, #44bc7e, #cbd867);
+    display: flex;
+  }
+  
+  .card.red {
+    background: linear-gradient(45deg, #ff9a9e, #ec98d2);
+    display: flex;
+  }
+  
+  .card.blue {
+    background: linear-gradient(45deg, #a1c4fd, #8fd2f0);
+    display: flex;
+  }
+  
+  .card h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+  
+  .card .update {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .card .update i {
+    margin-right: 5px;
+  }
+  .overview-content{
+    margin-top: 50px;
+  }
+  .overview-content .students-overview-calender{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+
+  }
+ 
+  .overview-content h3{
+    font-size: 2rem;
+  }
+
+  .overview-students-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .overview-students-list-table thead {
+    background-color: #009879;
+  }
+  
+  .overview-students-list-table th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .overview-students-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  
+ .teachers-table-overview .teachers-list-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .teachers-table-overview .teachers-list-table thead {
+    background-color: #009879;
+  }
+  
+  .teachers-table-overview .teachers-list-table th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .teachers-table-overview .teachers-list-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .card {
+    width: 45%; /* Two cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 80%; /* One card per row */
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 15px; 
+    /* Adjust padding for small screens */
+  }
+
+  .card h3 {
+    font-size: 20px; /* Smaller font size */
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+}
+
+  
+  
