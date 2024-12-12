@@ -96,7 +96,7 @@ useEffect(() => {
 
   return (
     <div className='attendance-container'>
-             <div className="attendance">
+     <div className="attendance">
       <h1>Mark Attendance</h1>
       <form onSubmit={handleSubmit}>
         <div className='attendance-form-content'>
