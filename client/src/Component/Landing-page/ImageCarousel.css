@@ -1,0 +1,24 @@
+/* src/ImageCarousel.css */
+
+.carousel-container {
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+   
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+/* src/ImageCarousel.css */
+
+
+

@@ -10,7 +10,6 @@ import image6 from '../../assets/images/image6.jpg';
 import image7 from '../../assets/images/image7.jpg';
 import image8 from '../../assets/images/image8.jpg';
 import image9 from '../../assets/images/image9.jpg';
-//import image10 from '../../assets/images/image10.jpg';
 
 const images = [
     image1, 
@@ -18,24 +17,20 @@ const images = [
     image3, 
     image4, 
     image5,
-     image6, 
-     image7, 
-     image8, 
-     image9, 
-    //  image10
+    image6, 
+    image7, 
+    image8, 
+    image9,
 ];
 
 const ImageGallary = () => {
   return (
-    <div className='gallary-content'>
-        <h3>IMAGE GALLERY</h3>
-    <div className="gallery">  
+    <div className="gallery">
       {images.map((image, index) => (
-        <div className="gallery-item" key={index}>
+        <div className="gallery-item" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
           <img src={image} alt={`Gallery item ${index + 1}`} />
         </div>
       ))}
-    </div>
     </div>
   );
 };
