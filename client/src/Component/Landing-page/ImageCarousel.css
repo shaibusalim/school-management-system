@@ -1,4 +1,4 @@
-/* src/ImageCarousel.css */
+
 
 .carousel-container {
     width: 60%;
@@ -17,8 +17,19 @@
 .carousel-item img:hover {
     transform: scale(1.05);
 }
+.gallery-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-container h3{
+    font-size: 2.3rem;
+    color:   #9e4ff2;
+    font-weight: bolder;
+}
 
-/* src/ImageCarousel.css */
+
 
 
 

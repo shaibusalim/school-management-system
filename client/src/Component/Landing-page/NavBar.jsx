@@ -11,11 +11,11 @@ function NavBar() {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    // Show header when scrolling up, hide when scrolling down
+    
     if (currentScrollY > lastScrollY) {
-      setIsVisible(false); // Scrolling down
+      setIsVisible(false); 
     } else {
-      setIsVisible(true); // Scrolling up
+      setIsVisible(true); 
     }
 
     setLastScrollY(currentScrollY);
@@ -29,7 +29,7 @@ function NavBar() {
   }, [lastScrollY]);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen); // Toggle menu visibility
+    setMenuOpen(!menuOpen);
   };
 
   return (

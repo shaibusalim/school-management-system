@@ -1,4 +1,4 @@
-// src/ImageGallery.js
+
 import React from 'react';
 import './ImageGallary.css'; 
 import image1 from '../../assets/images/image1.jpg';

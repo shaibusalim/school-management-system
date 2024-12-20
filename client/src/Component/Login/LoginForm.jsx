@@ -25,6 +25,7 @@ const LoginForm = ({ onClose }) => {
         // Store token and role in local storage
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", data.role);
+        localStorage.setItem("userId", data.id)
   
         // Redirect based on the user's role
         if (data.role === "Student") {

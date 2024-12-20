@@ -17,6 +17,7 @@ const StudentOverview = () => {
     totalTeachers: 0,
   });
   const [events, setEvents] = useState([]);
+  
 
 
   useEffect(() => {
@@ -95,6 +96,20 @@ const StudentOverview = () => {
         };
         fetAllTeachers();
   }, []);
+
+  useEffect(() => {
+    const fetchAllAttendance = async () => {
+      try{
+        const response = await axios.get(`http://localhost:5000/api/notifications?role=${targetRole}`);
+        setNotifications(response.data);
+        setLoading(false); 
+      }catch(error){
+        console.error("Error fetching attendance", error);
+        setLoading(false);
+      }
+    }
+    fetchAllAttendance();
+  })
 
   if (loading) {
     return <p>Loading students...</p>;
@@ -195,6 +210,7 @@ const StudentOverview = () => {
                 </PieChart>
             </div>  
        </div>
+     
     </div>
   );
 }

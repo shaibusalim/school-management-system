@@ -5,7 +5,7 @@ const {getAllAttendanceRecords, getAttendanceByStudent, markAttendance} = requir
 const router = express.Router();
 
 router.get('/', getAllAttendanceRecords);
-router.get('/:id', getAttendanceByStudent);
+router.get('/:userId', getAttendanceByStudent);
 router.post('/', markAttendance);
 
 module.exports = router;

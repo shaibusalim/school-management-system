@@ -1,9 +1,9 @@
-// src/ImageCarousel.js
+
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './ImageCarousel.css'; // Add your custom styles here
+import './ImageCarousel.css'; 
 
 import image1 from '../../assets/images/image1.jpg';
 import image2 from '../../assets/images/image2.jpg';
@@ -42,7 +42,9 @@ const ImageCarousel = () => {
     };
 
     return (
-        <div className="carousel-container">
+        <div className='gallery-container'>
+            <h3>IMAGE GALLERY</h3>
+                 <div className="carousel-container">
             <Slider {...settings}>
                 {images.map((image) => (
                     <div key={image.id} className="carousel-item">
@@ -51,6 +53,8 @@ const ImageCarousel = () => {
                 ))}
             </Slider>
         </div>
+        </div>
+       
     );
 };
 

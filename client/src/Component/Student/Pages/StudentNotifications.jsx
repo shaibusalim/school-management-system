@@ -3,62 +3,37 @@ import axios from 'axios';
 import '../../css/Notification.css'
 
 const StudentNotifications = () => {
-  const [message, setMessage] = useState('');
   const [targetRole, setTargetRole] = useState('student'); 
   const [isRead, setIsRead] = useState(false);
-  const [notifcations, setNotifications] = useState([])
+  const [notifications, setNotifications] = useState([])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  
 
-    const notificationData = {
-      message,
-      targetRole,
-      isRead,
-    };
-    try{
-
-      const response = await axios.post('http://localhost:5000/api/notifications', notificationData)
-      alert(response.message);
-    }catch(error){
-      console.error(error);
-      alert("Failed to create notificaitons");
+  useEffect(() => {
+    const fetchAllNotifications = async () => {
+      try{
+        const response = await axios.get(`http://localhost:5000/api/notifications?role=${targetRole}`);
+        setNotifications(response.data);
+      }catch(error){
+        console.error("Error fetching data", error);
+      }
     }
-
-  }
-
-  useEffect(()=> {
-    const fetchAllNotifactions = async () => {
-          try{
-            const response = await axios.get('http://localhost:5000/api/notifications');
-              setNotifications(response.data);
-          }catch(error){
-            console.error("Erorr fetching data", error);
-          }
-    }
-    fetchAllNotifactions();
-  }, []);
+    fetchAllNotifications();
+  }, [targetRole]);
 
   return (
     <div className='notification-container'>
-        <div className='notification-content'>
-        
-          <h3>Notification</h3>
-
-          
-        </div>
-        <div className='notification-list'>
-              {
-                notifcations.map((notifcation) => (
-                  <div>
-                        <div>{notifcation.message}</div>
-                        <h3>{notifcation.targetRole}</h3>
-                        <p>{notifcation.isRead}</p>
-                  </div>
-                  
-                ))
-              }
-        </div>
+      <h3>Notifications</h3>
+      
+      <div className='notification-list'>
+        {notifications.map((notification) => (
+          <div key={notification.id} className={`notification-item ${notification.isRead ? 'read' : 'unread'}`}>
+            <div className='notification-message'>{notification.message}</div>
+            <div className='notification-role'>{notification.targetRole}</div>
+            <div className='notification-status'>{notification.isRead ? 'Read' : 'Unread'}</div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

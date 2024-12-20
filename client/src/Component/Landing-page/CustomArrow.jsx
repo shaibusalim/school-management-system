@@ -1,4 +1,4 @@
-// src/CustomArrows.js
+
 import React from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 

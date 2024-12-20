@@ -1,4 +1,5 @@
 const Attendance = require('../models/attendanceModel');
+const User = require('../models/userModel');
 
 
 
@@ -14,17 +15,24 @@ const getAllAttendanceRecords = async (req, res) => {
 
 
 const getAttendanceByStudent = async (req, res) => {
-    const {studentId} = req.params;
+    const {userId} = req.params;
     try{
+
+        const user = await User.findOne({ where: { id: userId } });
+        if (!user) {
+            return res.status(404).json({ message: 'User  not found' });
+        }
+
+        
         const attendance = await Attendance.findAll({
             where: {
-                studentId: studentId
+                studentId: userId
             }
         })
         if (attendance.length === 0) {
             return res.status(404).json({ message: 'No attendance records found for this student' });
         }
-        res.json(attendance);
+        res.json({attendance});
     }catch (error){
             console.error(error.message);
             res.status(500).json({message: 'Server Error'});

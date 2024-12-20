@@ -16,7 +16,7 @@ const FadeIn = ({ children }) => {
     if (inView) {
       setIsVisible(true);
     } else {
-      setIsVisible(false); // Reset visibility when out of view
+      setIsVisible(false);
     }
   }, [inView]);
 

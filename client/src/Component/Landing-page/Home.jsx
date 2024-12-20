@@ -43,16 +43,16 @@ useEffect(() => {
         }
     };
 
-    const interval = setTimeout(typeText, 100); // Typing speed
+    const interval = setTimeout(typeText, 100); 
     return () => clearTimeout(interval);
 }, [textIndex, currentIndex, texts]);
 
 const handleGetStartedClick = () => {
-  setShowLoginForm(true); // Show the login form
+  setShowLoginForm(true); 
 };
 
 const handleCloseLoginForm = () => {
-  setShowLoginForm(false); // Hide the login form
+  setShowLoginForm(false); 
 };
   return (
     <div className='landingpage-container'>
@@ -119,10 +119,10 @@ const handleCloseLoginForm = () => {
                 </FadeIn>
                 <FadeIn>
         <div className='image-gallery-section'>
-          <ImageCarousel /> {/* Add the ImageGallery component here */}
+          <ImageCarousel /> 
         </div>
       </FadeIn>
-                {showLoginForm && <LoginForm onClose={handleCloseLoginForm} />} {/* Render the login form */}  
+                {showLoginForm && <LoginForm onClose={handleCloseLoginForm} />} 
     </div>
   )
 }

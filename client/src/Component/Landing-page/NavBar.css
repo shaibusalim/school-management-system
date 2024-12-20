@@ -46,7 +46,7 @@ body{
     gap: 20px;
 }
 .navbar-container .navbar-content .navbar .hamburger {
-    display: none; /* Hidden by default */
+    display: none; 
     font-size: 24px;
     cursor: pointer;
   }

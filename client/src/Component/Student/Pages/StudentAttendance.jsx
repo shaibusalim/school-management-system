@@ -4,53 +4,32 @@ import axios from 'axios';
 
 
 const StudentAttendance = () => {
-  const [students, setStudents] = useState([]); // List of all students
-  const [attendance, setAttendance] = useState([]); // Attendance data for submission
+
   const [listAttendance, setListAttendance] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isColor, setIsColor] = useState(true);
+  const userId = localStorage.getItem("userId"); 
 
-  useEffect(() => {
-    // Fetch all students when the component mounts
-    const fetchStudents = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/students');
-        setStudents(response.data);
-      } catch (error) {
-        console.error('Failed to fetch students:', error);
-      }
-    };
-
-    fetchStudents();
-  }, []);
 
  
 
-useEffect(() => {
-  const fetchAllAttendance = async () => {
+  useEffect(() => {
+    const fetchStudentAttendance = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/attendance/${userId}`); // Fetch attendance for the specific user
+        setListAttendance(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Failed to fetch attendance:', error);
+        alert('Failed to fetch attendance');
+      }
+    };
 
-    try{
-      const response = await axios.get('http://localhost:5000/api/attendance');
-      setListAttendance(response.data);
-      setLoading(false);
-    }catch(error){
-      console.error(error);
-      alert('Failed to fetch attendance');
+    if (userId) {
+      fetchStudentAttendance();
     }
-  }
-  fetchAllAttendance();
-}, [])
+  }, [userId]);
 
- useEffect(() => {
-     const changeColor = () => {
-        if(listAttendance.status === "Absent"){
-          setIsColor(false);
-        }else{
-           setIsColor(true);
-         }
-    }
-    changeColor();
- }, [listAttendance.status])
+  
 
 
 
@@ -70,17 +49,17 @@ useEffect(() => {
                 </tr>
               </thead>
              <tbody>
-                {
-                  listAttendance.map((list) => (
-                    <tr key={list.id}>
-                    <td>{list.studentId}</td>
-                    <td  className={isColor? 'red' : 'green'}>{list.status}</td>
-                    <td>{list.date}</td>
-                    <td>{list.createdAt}</td>
-                    <td>{list.updatedAt}</td>
-                  </tr>
-                  ))
-                }
+             {
+              listAttendance.map((list) => (
+                <tr key={list.id}>
+                  <td>{list.studentId}</td>
+                  <td className={list.status === "Absent" ? 'red' : 'green'}>{list.status}</td>
+                  <td>{list.date}</td>
+                  <td>{list.createdAt}</td>
+                  <td>{list.updatedAt}</td>
+                </tr>
+              ))
+            }
              </tbody>
              
           </table>      
