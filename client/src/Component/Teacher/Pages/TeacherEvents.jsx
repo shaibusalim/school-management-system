@@ -1,67 +1,57 @@
 // src/components/AddEventForm.js
-import React, { useState } from 'react';
-import './Events.css';
-
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './Events.css'
 
 const TeacherEvents = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  /*const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    const eventData = {
-      title,
-      description,
-      date
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('http://localhost:5000/api/events');
+        if (response.data.length === 0) {
+          console.log('No events found');
+        } else {
+          setEvents(response.data);
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
     };
+    fetchAllEvents();
+  }, []);
 
-    axios.post('/api/events', eventData)
-      .then(response => {
-        alert('Event added successfully!');
-      })
-      .catch(error => {
-        console.error("There was an error adding the event!", error);
-      });
-  };
-  */
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
-    <form className='events-form' >
-      <h3>Add Event</h3>
-      
-      <div className='events-title'>
-        <label>Title</label>
-        <input 
-          type="text" 
-          value={title} 
-          onChange={(e) => setTitle(e.target.value)} 
-          required 
-        />
+    <div className='student-events'>
+      <div>
+        <h2>Event List</h2>
+        <ul>
+          {events.map((event, index) => (
+            <li key={index}>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+              <p>Location: {event.location}</p>
+              <p>Target Audience: {event.targetAudience}</p>
+              <p>Date: {event.start}</p>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <div className='events-description'>
-        <label>Description</label>
-        <textarea 
-          value={description} 
-          onChange={(e) => setDescription(e.target.value)} 
-          required 
-        />
-      </div>
-
-      <div className='events-date'>
-        <label>Date</label>
-        <input 
-          type="date" 
-          value={date} 
-          onChange={(e) => setDate(e.target.value)} 
-          required 
-        />
-      </div>
-
-      <button type="submit">Submit Event</button>
-    </form>
+    </div>
   );
 };
 

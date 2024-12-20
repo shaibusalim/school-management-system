@@ -1,10 +1,37 @@
-import React, { useState } from 'react';
-import './Topbar.css';
+import React, { useState, useEffect } from 'react';
+import "../../css/Topbar.css";
 
 const Topbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [notifications, setNotifications] = useState([]);
+  const [notificationCount, setNotificationCount] = useState(0);
+  const [targetRole, setTargetRole] = useState('Teacher'); 
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  // Fetch notifications from the backend
+  const fetchNotifications = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/notifications?role=${targetRole}`); 
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setNotifications(data);
+      setNotificationCount(data.length);
+    } catch (error) {
+      console.error('Error fetching notifications:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchNotifications();
+    const interval = setInterval(fetchNotifications, 10000); 
+    return () => clearInterval(interval);
+  }, [targetRole]); 
+
+  // Toggle function for dropdowns
+  const toggleDropdown = (dropdown) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
 
   return (
     <div className="topbar">
@@ -14,9 +41,11 @@ const Topbar = () => {
       </div>
       <div className='icons menu'>
         <div className="icons">
-          <i className="fas fa-bell"></i>
+          <div className="notification-icon" onClick={() => toggleDropdown('notifications')}>
+            <i className="fas fa-bell"></i>
+            {notificationCount > 0 && <span className="notification-count">{notificationCount}</span>}
+          </div>
           <i className="fas fa-envelope"></i>
-          
         </div>
         <div className="profile">
           <img 
@@ -25,15 +54,14 @@ const Topbar = () => {
             src="https://storage.googleapis.com/a1aa/image/H64GenU4gjVeQ07CkKJRcYEiIo50RpWg45OCle9gNJfUbIaPB.jpg" 
             width="40" 
           />
-          <span>Admin</span>
+          <span>Teacher</span>
           
           {/* Dropdown icon */}
-          <i className="fas fa-caret-down" onClick={toggleDropdown}></i>
+          <i className="fas fa-caret-down" onClick={() => toggleDropdown('userProfile')}></i>
 
-          {/* Dropdown menu */}
-          {isDropdownOpen && (
-           
-                <ul className="dropdown-menu">
+          {/* User Profile Dropdown menu */}
+          {openDropdown === 'userProfile' && (
+            <ul className="dropdown-menu">
               <li>
                 <i className="fas fa-cogs"></i> Settings
               </li>
@@ -44,8 +72,21 @@ const Topbar = () => {
                 <i className="fas fa-sign-out-alt"></i> Logout
               </li>
             </ul>
-          
-           
+          )}
+
+          {/* Notification dropdown */}
+          {openDropdown === 'notifications' && (
+            <div className={`notification-dropdown ${openDropdown === 'notifications' ? 'show' : ''}`}>
+              <ul>
+                {notifications.length > 0 ? (
+                  notifications.map((notification, index) => (
+                    <li key={index}>{notification.message}</li> // Assuming notification has a 'message' property
+                  ))
+                ) : (
+                  <li>No notifications</li>
+                )}
+              </ul>
+            </div>
           )}
         </div>
       </div>

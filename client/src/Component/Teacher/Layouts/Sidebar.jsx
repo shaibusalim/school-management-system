@@ -1,15 +1,8 @@
-import React, { useState } from "react";
-
+import React from "react";
+import "../../css/Sidebar.css";
 import { Link } from "react-router-dom";
 
-const Sidebar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
-
+const Sidebar = ({toggleSidebar, isCollapsed}) => {
 
   return (
     <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
@@ -17,17 +10,16 @@ const Sidebar = () => {
         <i className={`fas fa-${isCollapsed ? "angle-right" : "angle-left"}`}></i>
       </button>
       <h2 className="sidebar-title">{!isCollapsed && "Adminity"}</h2>
-      <ul>
+      <ul className="sidebar-ul">
         <Link to="/teacher" className="link">
           <i className="fas fa-cube"></i>
           {!isCollapsed && <span>Dashboard</span>}
         </Link>
 
-
         {/* Sidebar Links */}
-        <Link to="/teacher/exams" className="link">
+        <Link to="/st/attendance" className="link">
           <i className="fas fa-clipboard-check"></i>
-          {!isCollapsed && <span>Exams</span>}
+          {!isCollapsed && <span>Attendance</span>}
         </Link>
         <Link to="/teacher/notifications" className="link">
           <i className="fas fa-magic"></i>

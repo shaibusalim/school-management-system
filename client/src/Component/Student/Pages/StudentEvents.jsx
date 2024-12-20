@@ -45,8 +45,7 @@ const StudentEvents = () => {
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <p>Location: {event.location}</p>
-              <p>Target Audience: {event.targetAudience}</p>
-              <p>Date: {event.start}</p>
+              <p>Date: {event.date}</p>
             </li>
           ))}
         </ul>

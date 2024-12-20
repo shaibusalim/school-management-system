@@ -16,12 +16,12 @@ import StudentDashboard from './Component/Student/Layouts/StudentDashboard';
 import StudentEvents from './Component/Student/Pages/StudentEvents';
 import StudentAttendance from './Component/Student/Pages/StudentAttendance';
 import StudentResults from './Component/Student/Pages/StudentResults';
-//import TeacheDashboard from './Component/Teacher/Layouts/teacherDashboard';
-//import TeacherOverview from './Component/Teacher/Pages/TeacherOverview';
-//import TeacherEvents from './Component/Teacher/Pages/TeacherEvents';
-//import TeacherSubject from './Component/Teacher/Pages/TeacherSubject';
- //import TeacherNotification from './Component/Teacher/Pages/TeacherNotifications';
-//import TeacherExams from './Component/Teacher/Pages/TeacherExams';
+import TeacheDashboard from './Component/Teacher/Layouts/teacherDashboard';
+import TeacherOverview from './Component/Teacher/Pages/TeacherOverview';
+import TeacherEvents from './Component/Teacher/Pages/TeacherEvents';
+import TeacherSubject from './Component/Teacher/Pages/TeacherSubject';
+import TeacherNotification from './Component/Teacher/Pages/TeacherNotifications';
+import TeacherExams from './Component/Teacher/Pages/TeacherExams';
 import Home from './Component/Landing-page/Home'; 
 import Login from './Component/Login/Login';
 
@@ -72,7 +72,7 @@ const App = () => {
                   
                   /> 
 
-                  {/* <Route
+                   <Route
                     path="/teacher/*"
                     element= {
                       <TeacheDashboard>
@@ -86,7 +86,7 @@ const App = () => {
                       </TeacheDashboard>
                     }
                   
-                  />     */}
+                  />    
               
             </Routes>
        </Router>

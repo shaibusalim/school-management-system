@@ -33,7 +33,6 @@ events.init({
     
 }, {
     sequelize,
-    timestamps: true,
     modelName: 'events'
 });
 

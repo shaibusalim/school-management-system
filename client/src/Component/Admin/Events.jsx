@@ -43,7 +43,7 @@ const [editDate, setEditDate] = useState('');
         title,
         description,
         location,
-        targetAudience,
+        target_audience: targetAudience,
         date,
       });
       console.log(response.data);
@@ -79,7 +79,7 @@ const [editDate, setEditDate] = useState('');
         title: editTitle,
         description: editDescription,
         location: editLocation,
-        targetAudience: editTargetAudience,
+        target_Audience: editTargetAudience,
         date: editDate,
       });
       setEvents(
@@ -190,9 +190,6 @@ const [editDate, setEditDate] = useState('');
               <th>Title</th>
               <th>Description</th>
               <th>Location</th>
-              <th>Target Audience</th>
-              <th>Start Date</th>
-              <th>End Date</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -202,9 +199,7 @@ const [editDate, setEditDate] = useState('');
                 <td>{event.title}</td>
                 <td>{event.description}</td>
                 <td>{event.location}</td>
-                <td>{event.targetAudience}</td>
-                <td>{event.start}</td>
-                <td>{event.end}</td>
+                
                 <td>
                   <button onClick={() => handleEdit(event._id)}>Edit</button>
                   <button onClick={() => handleDelete(event._id)}>Delete</button>
