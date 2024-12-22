@@ -1,4 +1,5 @@
 const Notification = require('../models/notificationModel');
+//const User = require('../models/userModel');
 
 
 const createNotification = async (req, res) => {
@@ -34,5 +35,11 @@ const getNotifications = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch notifications' });
   }
 };
+
+// const getNotificationByRole = async () => {
+//   const {role} = req.body
+
+//   const notification = await 
+// }
 
 module.exports = { createNotification, getNotifications };

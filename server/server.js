@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require("cors");
 const {studentRouter, teacherRouter, dashboardRouter, notificationRouter, attendanceRouter, authRouter, eventRouter} = require('./routers/index');
 const sequelize  = require('./config/database');
+const createDefaultAdmin = require('./admin');
 
 
 
@@ -27,8 +28,9 @@ app.use('/api/events', eventRouter);
 
 // Sync database and start server
 sequelize.sync({ alter: true })
-    .then(() => {
+    .then(async () => {
         console.log('Database synchronized');
+        await createDefaultAdmin();
         app.listen(5000, () => {
             console.log('Server is running on port 5000');
         });
